@@ -115,6 +115,7 @@ export class Network {
           const n = g.node(id, {
             [attribute.label]:
               "{input|id : " + id + "| out : " + input.out.toString() + "}",
+            [attribute.shape]: "record",
           });
           map.push({ network: input, graphNode: n });
         });
@@ -130,6 +131,7 @@ export class Network {
               " | slope : " +
               node.params.slope.toString() +
               "}}",
+            [attribute.shape]: "record",
           });
           map.push({ network: node, graphNode: n });
         });
@@ -139,6 +141,7 @@ export class Network {
           const n = g.node(id, {
             [attribute.label]:
               "{output|id : " + id + "| out : " + output.out.toString() + "}",
+            [attribute.shape]: "record",
           });
           map.push({ network: output, graphNode: n });
         });
