@@ -30,8 +30,8 @@ export default class Neurone implements GenericNeurone {
       },
       { sum: 0, weights: 0 }
     );
-    this.out = sigmoid(
-      this.params.slope * (sum.sum / sum.weights - this.params.mid)
-    );
+    let x = sum.sum / sum.weights;
+
+    this.out = sigmoid(this.params.slope * (x - this.params.mid));
   }
 }
